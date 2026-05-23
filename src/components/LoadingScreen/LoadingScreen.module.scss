@@ -1,0 +1,28 @@
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  background: var(--color-bg);
+  color: var(--color-muted);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+
+  span {
+    width: 32px;
+    aspect-ratio: 1;
+    border: 2px solid color-mix(in srgb, var(--color-sage) 32%, transparent);
+    border-top-color: var(--color-sage);
+    border-radius: 50%;
+    animation: spin 900ms linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

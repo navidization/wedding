@@ -1,0 +1,24 @@
+:root {
+  --color-bg: #f7f3ec;
+  --color-paper: #fffaf1;
+  --color-envelope: #b9cdb7;
+  --color-sage: #8f9f82;
+  --color-wax: #536d4f;
+  --color-gold: #c7a96b;
+  --color-text: #2d2a26;
+  --color-muted: #6f6a61;
+  --color-shadow: rgba(45, 42, 38, 0.16);
+
+  --radius-card: 28px;
+  --shadow-soft: 0 24px 80px var(--color-shadow);
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-open: 1200ms;
+  --duration-detail: 700ms;
+  --layout-max-width: 560px;
+
+  --font-persian: "WeddingPersian", "Vazirmatn", "Tahoma", sans-serif;
+  --font-serif: "WeddingSerif", "Cormorant Garamond", "Georgia", serif;
+  --font-english-serif: "Cormorant Garamond", "WeddingSerif", "Georgia", serif;
+  --font-save-date: "Lavishly Yours", "Great Vibes", "Segoe Script", cursive;
+}

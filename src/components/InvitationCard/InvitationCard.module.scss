@@ -1,0 +1,204 @@
+.card {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(45, 42, 38, 0.12);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-text);
+  text-align: center;
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+  // padding: clamp(14px, 2.4vw, 24px) clamp(22px, 4vw, 42px);
+  padding: clamp(10px, 1.8vw, 18px) clamp(18px, 3vw, 34px);
+  // align-content: start;
+  row-gap: clamp(2px, 0.5svh, 6px);
+}
+
+.texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.24;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(199, 169, 107, 0.14), transparent 25%),
+    repeating-linear-gradient(90deg, rgba(45, 42, 38, 0.03) 0 1px, transparent 1px 13px);
+  pointer-events: none;
+}
+
+.cornerArt {
+  position: absolute;
+  inset-inline-start: -10px;
+  top: -8px;
+  width: clamp(66px, 18%, 104px);
+  height: clamp(108px, 24%, 168px);
+  opacity: 0.55;
+
+  img {
+    height: clamp(130px, 10.2svh, 190px);
+    width: clamp(130px, 28%, 134px);
+    object-fit: contain;
+    user-select: none;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    border: 1px solid rgba(143, 159, 130, 0.52);
+    border-radius: 999px 999px 999px 0;
+    transform: rotate(-34deg);
+  }
+
+  span:nth-child(1) {
+    width: 50%;
+    height: 14%;
+    top: 16%;
+    left: 22%;
+  }
+
+  span:nth-child(2) {
+    width: 68%;
+    height: 18%;
+    top: 40%;
+    left: 0;
+  }
+
+  span:nth-child(3) {
+    width: 44%;
+    height: 13%;
+    top: 66%;
+    left: 31%;
+  }
+}
+
+.heartLine {
+  direction: ltr;
+  margin: 0 auto clamp(2px, 0.7svh, 6px);
+  width: min(92%, 390px);
+
+  img {
+    display: block;
+    width: 100%;
+    height: clamp(40px, 7.2svh, 58px);
+    object-fit: contain;
+    user-select: none;
+  }
+}
+
+.month,
+.forWedding,
+.englishDetails {
+  direction: ltr;
+  font-family: var(--font-english-serif);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.month {
+  margin: 0 0 clamp(5px, 1svh, 10px);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3.4vw, 1.85rem);
+}
+
+.calendar {
+  direction: ltr;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: clamp(3px, 0.8svh, 7px) clamp(6px, 1vw, 12px);
+  margin: 0 auto clamp(7px, 1.3svh, 13px);
+  width: min(96%, 456px);
+  font-family: var(--font-english-serif);
+}
+
+.day {
+  font-size: clamp(0.82rem, 2vw, 1.08rem);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.date,
+.markedDate {
+  position: relative;
+  // min-height: clamp(0px, 1svh, 34px);
+  font-size: clamp(1.02rem, 2.55vw, 1.38rem);
+  font-weight: 500;
+}
+
+.markedDate::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: clamp(32px, 8.7vw, 44px);
+  aspect-ratio: 1;
+  border: 2px dotted var(--color-muted);
+  border-radius: 65% 65% 70% 0;
+  transform: translate(-50%, -55%) rotate(-45deg);
+}
+
+.markedDate::after {
+  content: "";
+  position: absolute;
+  top: clamp(24px, 4.8svh, 33px);
+  left: 50%;
+  width: 1px;
+  height: clamp(34px, 7svh, 62px);
+  background: linear-gradient(var(--color-muted), transparent);
+}
+
+.saveDate {
+  direction: ltr;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  margin: clamp(0px, 1.4svh, 36px) 0 clamp(5px, 1svh, 10px);
+  font-family: var(--font-save-date);
+  font-weight: 400;
+  font-size: clamp(2.35rem, 8.4vw, 3.85rem);
+  line-height: 1;
+}
+
+.forWedding {
+  margin: 0 0 clamp(5px, 1svh, 10px);
+  font-size: clamp(0.72rem, 1.5vw, 0.92rem);
+  font-weight: 600;
+}
+
+.names {
+  direction: ltr;
+  // margin: 0 0 clamp(6px, 1.1svh, 10px);
+  font-family: var(--font-english-serif);
+  font-size: clamp(1.5rem, 3.55vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+}
+
+.englishDetails {
+  display: grid;
+  gap: clamp(3px, 0.6svh, 6px);
+  margin: 0 0 clamp(7px, 1.3svh, 13px);
+  font-size: clamp(0.76rem, 1.55vw, 0.98rem);
+  font-weight: 500;
+
+  p {
+    margin: 0;
+  }
+}
+
+.persianDetails {
+  display: grid;
+  width: min(100%, 360px);
+  margin: 0 auto;
+  padding: clamp(8px, 1.3svh, 12px) 0 0;
+  border-top: 1px solid rgba(199, 169, 107, 0.45);
+  color: var(--color-muted);
+  font-size: clamp(0.88rem, 1.9vw, 1.08rem);
+
+  p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,20 @@
+.seal {
+  position: absolute;
+  left: 29.8%;
+  top: 65.2%;
+  z-index: 10;
+  width: clamp(72px, 17vw, 96px);
+  aspect-ratio: 2 / 3;
+  translate: -50% -47%;
+  filter: drop-shadow(0 13px 15px rgba(45, 42, 38, 0.34));
+  pointer-events: none;
+  will-change: transform, opacity;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    user-select: none;
+  }
+}
