@@ -36,12 +36,12 @@ export default function Wrap({ isOpen, reducedMotion }: WrapProps) {
           animate={
             isOpen || reducedMotion
               ? { rotate: -3.5, x: -5, y: -2 }
-              : { rotate: [-1.4, 0.7, -1.4], x: 0, y: 0 }
+              : { rotate: 0, x: 0, y: 0 }
           }
           transition={{
-            duration: reducedMotion ? 0 : 4.8,
-            repeat: isOpen || reducedMotion ? 0 : Infinity,
-            ease: "easeInOut",
+            duration: reducedMotion ? 0 : 1.08,
+            ease: softEase,
+            delay: reducedMotion ? 0 : isOpen ? 1.88 : 0,
           }}
         />
       </motion.div>

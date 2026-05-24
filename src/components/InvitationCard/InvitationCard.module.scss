@@ -6,7 +6,12 @@
   min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(45, 42, 38, 0.12);
-  background: var(--color-paper);
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(199, 169, 107, 0.1), transparent 28%),
+    url("../../assets/images/card-texture.png");
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 128px;
   box-shadow: var(--shadow-card);
   color: var(--color-text);
   text-align: center;
@@ -21,10 +26,8 @@
 .texture {
   position: absolute;
   inset: 0;
-  opacity: 0.24;
-  background:
-    radial-gradient(circle at 18% 8%, rgba(199, 169, 107, 0.14), transparent 25%),
-    repeating-linear-gradient(90deg, rgba(45, 42, 38, 0.03) 0 1px, transparent 1px 13px);
+  opacity: 0.08;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 35%);
   pointer-events: none;
 }
 
