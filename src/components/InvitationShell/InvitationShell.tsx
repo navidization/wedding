@@ -1,3 +1,4 @@
+import { Hand } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import weddingMusic from "../../assets/audio/wedding-music.mp3";
 import { Guest } from "../../data/guests";
@@ -64,16 +65,13 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
           <InvitationCard ref={cardRef} guest={guest} isOpen={isOpen} reducedMotion={reducedMotion} />
           <Envelope isOpen={isOpen} reducedMotion={reducedMotion} />
           <Wrap isOpen={isOpen} reducedMotion={reducedMotion} />
-          {canOpen && (
-            <span
-              className={styles.openHint}
-
-            >
-              <span aria-hidden="true">⌁</span>
-              برای باز کردن لمس کنید
-            </span>
-          )}
         </button>
+        {canOpen && (
+          <span className={styles.openHint}>
+            <Hand aria-hidden="true" size={16} strokeWidth={2} />
+            برای باز کردن لمس کنید
+          </span>
+        )}
       </section>
       <audio ref={audioRef} src={weddingMusic} preload="auto" loop />
       <ActionButtons cardRef={cardRef} />

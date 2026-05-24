@@ -7,7 +7,7 @@ export const wedding = {
   englishAddressText: "Baharestan City, Qaleh Shour Road, after the Kabutar Abad sign",
   persianDateText: "پنجشنبه ۲۱ خرداد",
   dateText: "پنجشنبه ۲۱ خرداد ۱۴۰۵",
-  timeText: "ساعت ۱۵:۰۰",
+  timeText: "ساعت ۱۹:۰۰",
   venueName: "باغ عشاق",
   address: "بهارستان، جاده قلعه شور بعد از کبوتر آباد",
   mapUrl: "https://nshn.ir/_bZBM1yxDSdk",
@@ -18,8 +18,8 @@ export const wedding = {
     title: "مراسم عروسی نوید و مرضیه",
     description: "دعوت‌نامه مراسم عروسی نوید و مرضیه",
     location: "باغ عشاق، بهارستان، جاده قلعه شور",
-    start: "2026-06-11T15:00:00+03:30",
-    end: "2026-06-11T19:00:00+03:30",
+    start: "2026-06-11T19:00:00+03:30",
+    end: "2026-06-11T23:00:00+03:30",
   },
 } as const;
 

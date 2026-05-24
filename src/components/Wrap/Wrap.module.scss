@@ -64,3 +64,22 @@
     user-select: none;
   }
 }
+
+@media (max-width: 520px) {
+  .greenPanel {
+    width: 48.5%;
+  }
+
+  .flowerStem {
+    left: -8%;
+    top: 35%;
+    width: 131%;
+    transform-origin: 52% 82%;
+  }
+
+  .twine {
+    top: 57.5%;
+    height: clamp(52px, 11.5vw, 68px);
+    transform-origin: 32% 50%;
+  }
+}

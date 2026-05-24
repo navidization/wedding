@@ -10,6 +10,7 @@
 }
 
 .stage {
+  position: relative;
   display: grid;
   min-height: 0;
   align-items: center;
@@ -19,7 +20,7 @@
 .invitationStack {
   position: relative;
   display: block;
-  width: min(94vw, 620px, calc((100svh - 118px) * 0.86));
+  width: min(94vw, 620px, calc((100svh - 132px) * 0.86));
   aspect-ratio: 0.86;
   padding: 0;
   border: 0;
@@ -41,29 +42,31 @@
 
 .openHint {
   position: absolute;
-  inset-inline: 50% auto;
+  left: 23.6%;
+  right: auto;
   bottom: clamp(16px, 4svh, 34px);
-  z-index: 20;
+  z-index: 30;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: max-content;
-  max-width: calc(100% - 32px);
+  max-width: min(42vw, 220px);
   padding: 9px 16px;
   border: 1px solid rgba(255, 250, 241, 0.78);
   border-radius: 999px;
   background: rgba(45, 42, 38, 0.74);
   box-shadow: 0 14px 32px rgba(45, 42, 38, 0.18);
   color: var(--color-paper);
+  font-family: var(--font-persian);
   font-size: clamp(0.8rem, 2.4vw, 0.95rem);
   white-space: nowrap;
-  translate: -20% 0;
+  translate: -50% 0;
   animation: hintPulse 1600ms var(--ease-soft) infinite;
   pointer-events: none;
 
-  span {
-    font-size: 1.15em;
+  svg {
+    flex-shrink: 0;
   }
 }
 
@@ -74,13 +77,16 @@
   }
 
   .invitationStack {
-    width: min(96vw, calc((100svh - 102px) * 0.58));
+    width: min(96vw, calc((100svh - 126px) * 0.58));
     aspect-ratio: 0.58;
   }
 
   .openHint {
-    bottom: 14px;
-    padding: 8px 13px;
+    left: 24.25%;
+    bottom: clamp(12px, 2.8svh, 20px);
+    max-width: min(44vw, 200px);
+    padding: 7px 12px;
+    font-size: clamp(0.72rem, 3.2vw, 0.84rem);
   }
 }
 
@@ -88,10 +94,12 @@
 
   0%,
   100% {
-    transform: translateY(0) scale(1);
+    translate: -50% 0;
+    scale: 1;
   }
 
   50% {
-    transform: translateY(-3px) scale(1.025);
+    translate: -50% -3px;
+    scale: 1.025;
   }
 }
