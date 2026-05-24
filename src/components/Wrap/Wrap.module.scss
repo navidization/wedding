@@ -15,7 +15,10 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent 32%),
     var(--color-envelope);
   border-radius: 2px;
-  box-shadow: 10px 0 20px rgba(45, 42, 38, 0.12);
+  box-shadow:
+    1px 0 0 rgba(255, 255, 255, 0.2) inset,
+    8px 2px 18px rgba(45, 42, 38, 0.14),
+    14px 0 28px rgba(45, 42, 38, 0.1);
   transform-origin: left center;
   will-change: transform;
 }
@@ -52,7 +55,7 @@
   z-index: 7;
   height: clamp(64px, 14vw, 94px);
   transform-origin: 34% 50%;
-  filter: drop-shadow(0 8px 5px rgba(45, 42, 38, 0.18));
+  filter: drop-shadow(0 2px 3px rgba(45, 42, 38, 0.2)) drop-shadow(0 6px 10px rgba(45, 42, 38, 0.14));
   will-change: transform, opacity;
 
   img {

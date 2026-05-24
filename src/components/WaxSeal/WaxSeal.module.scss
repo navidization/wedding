@@ -6,7 +6,8 @@
   width: clamp(72px, 17vw, 96px);
   aspect-ratio: 2 / 3;
   translate: -50% -52%;
-  filter: drop-shadow(0 13px 15px rgba(45, 42, 38, 0.34));
+  filter: drop-shadow(0 2px 3px rgba(45, 42, 38, 0.35)) drop-shadow(0 8px 14px rgba(45, 42, 38, 0.28))
+    drop-shadow(0 16px 22px rgba(45, 42, 38, 0.16));
   pointer-events: none;
   will-change: transform, opacity;
 

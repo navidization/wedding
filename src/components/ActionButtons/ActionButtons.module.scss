@@ -9,6 +9,16 @@
 
   button {
     min-width: 116px;
+    border-color: color-mix(in srgb, var(--color-gold) 32%, rgba(45, 42, 38, 0.14)) !important;
+    background: color-mix(in srgb, var(--color-paper) 92%, var(--color-gold) 8%) !important;
+    color: var(--color-text) !important;
+    box-shadow: 0 8px 20px rgba(45, 42, 38, 0.06);
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--color-gold) 52%, transparent) !important;
+      background: color-mix(in srgb, var(--color-paper) 86%, var(--color-gold) 14%) !important;
+      color: var(--color-text) !important;
+    }
   }
 }
 
@@ -36,5 +46,27 @@
     min-height: 0.9em;
     margin: 0;
     font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 339px) {
+  .actions {
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+
+    button {
+      min-width: 0;
+      min-height: 1.625rem;
+      padding: 0.1875rem 0.5rem;
+    }
+  }
+
+  .status {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    font-size: 0.6875rem;
   }
 }

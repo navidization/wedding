@@ -38,6 +38,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
+    radial-gradient(ellipse 120% 90% at 50% 0%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(45, 42, 38, 0.06), transparent 50%),
     linear-gradient(135deg, rgba(143, 159, 130, 0.15), transparent 32%),
     linear-gradient(315deg, rgba(199, 169, 107, 0.14), transparent 38%),
     var(--color-bg);
