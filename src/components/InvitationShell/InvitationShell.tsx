@@ -1,3 +1,4 @@
+import { Hand } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import weddingMusic from "../../assets/audio/wedding-music.mp3";
 import { Guest } from "../../data/guests";
@@ -65,11 +66,8 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
           <Envelope isOpen={isOpen} reducedMotion={reducedMotion} />
           <Wrap isOpen={isOpen} reducedMotion={reducedMotion} />
           {canOpen && (
-            <span
-              className={styles.openHint}
-
-            >
-              <span aria-hidden="true">⌁</span>
+            <span className={styles.openHint}>
+              <Hand aria-hidden="true" size={16} strokeWidth={2} />
               برای باز کردن لمس کنید
             </span>
           )}

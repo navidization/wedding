@@ -21,7 +21,7 @@ Edit `src/data/wedding.ts` for names, date, venue, address, map URL, WhatsApp ph
 
 ## Replace Fonts And Assets
 
-Put final font files in `src/assets/fonts/` and update the `@font-face` URLs in `src/styles/globals.scss`. The current `.woff2` files are placeholders so the app can be wired for local fonts immediately.
+Persian UI uses **Noto Kufi Arabic** from `src/assets/fonts/Noto_Kufi_Arabic/`. English card typography uses Google fonts and optional `WeddingSerif.woff2` — adjust `@font-face` rules in `src/styles/globals.scss` and tokens in `src/styles/_variables.scss`.
 
 Reference images are stored in `src/assets/images/`. Decorative invitation pieces are currently CSS/SVG so they can animate cleanly.
 

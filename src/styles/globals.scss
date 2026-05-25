@@ -3,9 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Lavishly+Yours&display=swap");
 
 @font-face {
-  font-family: "WeddingPersian";
-  src: url("../assets/fonts/WeddingPersian.woff2") format("woff2");
-  font-weight: 400 800;
+  font-family: "Noto Kufi Arabic";
+  src: url("../assets/fonts/Noto_Kufi_Arabic/NotoKufiArabic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -38,6 +38,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
+    radial-gradient(ellipse 120% 90% at 50% 0%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 100%, rgba(45, 42, 38, 0.06), transparent 50%),
     linear-gradient(135deg, rgba(143, 159, 130, 0.15), transparent 32%),
     linear-gradient(315deg, rgba(199, 169, 107, 0.14), transparent 38%),
     var(--color-bg);

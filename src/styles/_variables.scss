@@ -11,13 +11,24 @@
 
   --radius-card: 28px;
   --shadow-soft: 0 24px 80px var(--color-shadow);
+  --shadow-card:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 1px 2px rgba(45, 42, 38, 0.05),
+    0 8px 18px rgba(45, 42, 38, 0.08),
+    0 22px 44px rgba(45, 42, 38, 0.1),
+    0 40px 72px -12px rgba(45, 42, 38, 0.14);
+  --shadow-stack:
+    0 2px 4px rgba(45, 42, 38, 0.06),
+    0 14px 28px rgba(45, 42, 38, 0.1),
+    0 32px 56px rgba(45, 42, 38, 0.08);
+  --shadow-contact: rgba(45, 42, 38, 0.22);
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-open: 1200ms;
   --duration-detail: 700ms;
   --layout-max-width: 560px;
 
-  --font-persian: "WeddingPersian", "Vazirmatn", "Tahoma", sans-serif;
+  --font-persian: "Noto Kufi Arabic", "Tahoma", sans-serif;
   --font-serif: "WeddingSerif", "Cormorant Garamond", "Georgia", serif;
   --font-english-serif: "Cormorant Garamond", "WeddingSerif", "Georgia", serif;
   --font-save-date: "Lavishly Yours", "Great Vibes", "Segoe Script", cursive;
