@@ -1,4 +1,4 @@
-import { Hand } from "lucide-react";
+import { Hand, Music2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import weddingMusic from "../../assets/audio/wedding-music.mp3";
 import { Guest } from "../../data/guests";
@@ -20,6 +20,8 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
   const cardRef = useRef<HTMLElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [hasOpened, setHasOpened] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const reducedMotion = useReducedMotionPreference();
   const isReady = usePageReady(shellRef, { disabled: reducedMotion });
   const isOpen = reducedMotion || hasOpened;
@@ -41,9 +43,18 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
       if (audio) {
         audio.currentTime = 0;
         await audio.play();
+        setIsMusicPlaying(true);
       }
     } catch {
       // The placeholder file is empty for now; replace it with real music later.
+    }
+  };
+
+  const handleToggleMusic = () => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+    if (audioRef.current) {
+      audioRef.current.muted = nextMuted;
     }
   };
 
@@ -73,8 +84,27 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
           )}
         </button>
       </section>
-      <audio ref={audioRef} src={weddingMusic} preload="auto" loop />
-      <ActionButtons cardRef={cardRef} />
+      <audio
+        ref={audioRef}
+        src={weddingMusic}
+        preload="auto"
+        loop
+        muted={isMuted}
+        onPlay={() => setIsMusicPlaying(true)}
+        onPause={() => setIsMusicPlaying(false)}
+      />
+      {isMusicPlaying && (
+        <button
+          className={`${styles.musicToggle} ${isMuted ? styles.musicToggleMuted : ""}`}
+          type="button"
+          onClick={handleToggleMusic}
+          aria-label={isMuted ? "Unmute music" : "Mute music"}
+          aria-pressed={isMuted}
+        >
+          {isMuted ? <VolumeX aria-hidden="true" size={18} /> : <Music2 aria-hidden="true" size={18} />}
+        </button>
+      )}
+      <ActionButtons />
 
     </main>
   );

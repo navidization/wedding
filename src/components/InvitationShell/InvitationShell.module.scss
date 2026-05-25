@@ -1,12 +1,43 @@
 .page {
+  position: relative;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  gap: clamp(6px, 1.4svh, 12px);
+  grid-template-rows: auto auto;
+  gap: 0;
   height: 100svh;
   overflow: hidden;
   padding: clamp(8px, 1.7svh, 16px) clamp(10px, 2.4vw, 24px);
+  align-content: center;
   align-items: center;
   justify-items: center;
+}
+
+.musicToggle {
+  position: absolute;
+  left: clamp(10px, 2.4vw, 24px);
+  bottom: clamp(10px, 2.2svh, 22px);
+  z-index: 40;
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--color-gold) 38%, rgba(45, 42, 38, 0.16));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-paper) 90%, var(--color-gold) 10%);
+  box-shadow: 0 10px 22px rgba(45, 42, 38, 0.12);
+  color: var(--color-text);
+  cursor: pointer;
+  animation: musicPulse 1200ms var(--ease-soft) infinite;
+
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-gold) 55%, transparent);
+    outline-offset: 3px;
+  }
+}
+
+.musicToggleMuted {
+  animation: none;
+  color: var(--color-muted);
 }
 
 .stage {
@@ -14,7 +45,8 @@
   display: grid;
   width: 100%;
   min-height: 0;
-  align-items: center;
+  align-items: end;
+  align-content: end;
   justify-items: center;
 
   &::before {
@@ -121,7 +153,7 @@
 
 @media (max-width: 520px) {
   .page {
-    gap: 6px;
+    gap: 0;
     padding: 7px 8px 8px;
   }
 
@@ -136,6 +168,13 @@
     max-width: min(46%, 10.5rem);
     padding: 7px 10px;
     font-size: clamp(0.72rem, 2.8vw, 0.84rem);
+  }
+
+  .musicToggle {
+    left: 8px;
+    bottom: 8px;
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -176,5 +215,19 @@
   50% {
     translate: -50% -3px;
     scale: 1.025;
+  }
+}
+
+@keyframes musicPulse {
+
+  0%,
+  100% {
+    scale: 1;
+    box-shadow: 0 10px 22px rgba(45, 42, 38, 0.12);
+  }
+
+  50% {
+    scale: 1.08;
+    box-shadow: 0 12px 26px rgba(45, 42, 38, 0.18);
   }
 }

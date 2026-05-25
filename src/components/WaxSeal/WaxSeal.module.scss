@@ -1,7 +1,7 @@
 .seal {
   position: absolute;
   left: 25.5%;
-  top: 69.2%;
+  top: 66.5%;
   z-index: 10;
   width: clamp(72px, 17vw, 96px);
   aspect-ratio: 2 / 3;
@@ -23,7 +23,7 @@
 @media (max-width: 520px) {
   .seal {
     left: 24%;
-    top: 62.5%;
+    top: 60%;
     width: clamp(64px, 16.5vw, 84px);
     translate: -50% -48%;
   }

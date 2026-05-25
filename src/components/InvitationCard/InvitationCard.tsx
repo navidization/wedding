@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import { forwardRef } from "react";
-import flImage from "../../assets/images/f2.png";
 import heartImage from "../../assets/images/heart.png";
 import { Guest } from "../../data/guests";
 import { animationTiming, wedding } from "../../data/wedding";
@@ -57,12 +56,6 @@ const InvitationCard = forwardRef<HTMLElement, InvitationCardProps>(
         <div
           className={styles.texture}
           aria-hidden="true" />
-        <div
-          className={styles.cornerArt}
-          aria-hidden="true"
-        >
-          <img src={flImage} alt="" draggable="false" />
-        </div>
 
         <motion.div custom={0} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.heartLine}>
           <img src={heartImage} alt="" draggable="false" />

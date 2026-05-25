@@ -1,27 +1,16 @@
 import { Download, MapPin } from "lucide-react";
-import { RefObject, useState } from "react";
 import { Button } from "@/components/ui/button";
+import invitationDownload from "../../assets/images/jutetwine.png";
 import { wedding } from "../../data/wedding";
-import { exportElementAsPng } from "../../utils/exportImage";
 import { openExternalUrl } from "../../utils/maps";
 import styles from "./ActionButtons.module.scss";
 
-type ActionButtonsProps = {
-  cardRef: RefObject<HTMLElement | null>;
-};
-
-export default function ActionButtons({ cardRef }: ActionButtonsProps) {
-  const [status, setStatus] = useState("");
-
-  const handleSave = async () => {
-    if (!cardRef.current) return;
-    try {
-      setStatus("در حال آماده‌سازی تصویر...");
-      await exportElementAsPng(cardRef.current, "navid-marzieh-invitation.png");
-      setStatus("کارت ذخیره شد.");
-    } catch {
-      setStatus("ذخیره تصویر انجام نشد.");
-    }
+export default function ActionButtons() {
+  const handleSave = () => {
+    const link = document.createElement("a");
+    link.href = invitationDownload;
+    link.download = "navid-marzieh-invitation.png";
+    link.click();
   };
 
   return (
@@ -46,10 +35,6 @@ export default function ActionButtons({ cardRef }: ActionButtonsProps) {
         <MapPin aria-hidden="true" />
         مشاهده مسیر
       </Button>
-
-      <p className={styles.status} role="status" aria-live="polite">
-        {status}
-      </p>
     </section>
   );
 }
