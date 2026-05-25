@@ -11,7 +11,7 @@
 
 ### ۲. اصلاحات کارت (Card UI)
 *   **اسکرین‌شات:** 
-![Alt text](./screenshot/3.jpg)
+![Alt text](./screenshot/3.png)
 
 **تغییرات مورد نیاز:**
 
