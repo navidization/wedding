@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 // import flowerImage from "../../assets/images/flower.png";
-import flowerImage from "../../assets/images/f23.png";
+import flowerImage from "../../assets/images/orchids.png";
 import twineImage from "../../assets/images/jutetwine.png";
 import WaxSeal from "../WaxSeal/WaxSeal";
 import styles from "./Wrap.module.scss";
@@ -24,7 +24,11 @@ export default function Wrap({ isOpen, reducedMotion }: WrapProps) {
             ? { x: "-118%", rotate: -1.8, y: -2 }
             : { x: "0%", rotate: 0, y: 0 }
         }
-        transition={{ duration: panelDuration, ease: softEase, delay: reducedMotion ? 0 : 1.88 }}
+        transition={{
+          duration: panelDuration,
+          ease: softEase,
+          delay: reducedMotion ? 0 : 1.88,
+        }}
       >
         <div className={styles.paperGrain} />
         <motion.img
@@ -54,7 +58,11 @@ export default function Wrap({ isOpen, reducedMotion }: WrapProps) {
             ? { x: "86%", y: 10, opacity: 0, rotate: 2.6, scaleX: 1.03 }
             : { x: "0%", y: 0, opacity: 1, rotate: 0, scaleX: 1 }
         }
-        transition={{ duration: reducedMotion ? 0 : 1.12, ease: softEase, delay: reducedMotion ? 0 : 1.58 }}
+        transition={{
+          duration: reducedMotion ? 0 : 1.12,
+          ease: softEase,
+          delay: reducedMotion ? 0 : 1.58,
+        }}
       >
         <img src={twineImage} alt="" draggable="false" />
       </motion.div>
