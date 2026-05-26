@@ -8,11 +8,5 @@ function isGuestKey(value: string | undefined): value is GuestKey {
 }
 
 export default function InvitePage() {
-  const { guestKey } = useParams();
-
-  if (!isGuestKey(guestKey)) {
-    return <NotFoundPage />;
-  }
-
-  return <InvitationShell guest={guests[guestKey]} />;
+  return <InvitationShell />;
 }

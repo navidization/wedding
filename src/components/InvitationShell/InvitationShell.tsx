@@ -15,7 +15,7 @@ type InvitationShellProps = {
   guest: Guest;
 };
 
-export default function InvitationShell({ guest }: InvitationShellProps) {
+export default function InvitationShell() {
   const shellRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -52,7 +52,11 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
       <section
         className={styles.stage}
         ref={shellRef}
-        style={{ "--initial-delay": `${animationTiming.initialDelay}s` } as React.CSSProperties}
+        style={
+          {
+            "--initial-delay": `${animationTiming.initialDelay}s`,
+          } as React.CSSProperties
+        }
         aria-label="دعوت‌نامه عروسی نوید و مرضیه"
       >
         <button
@@ -62,7 +66,11 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
           disabled={!canOpen}
           aria-label={canOpen ? "باز کردن دعوت‌نامه" : "دعوت‌نامه باز شده است"}
         >
-          <InvitationCard ref={cardRef} guest={guest} isOpen={isOpen} reducedMotion={reducedMotion} />
+          <InvitationCard
+            ref={cardRef}
+            isOpen={isOpen}
+            reducedMotion={reducedMotion}
+          />
           <Envelope isOpen={isOpen} reducedMotion={reducedMotion} />
           <Wrap isOpen={isOpen} reducedMotion={reducedMotion} />
           {canOpen && (
@@ -73,9 +81,37 @@ export default function InvitationShell({ guest }: InvitationShellProps) {
           )}
         </button>
       </section>
+<<<<<<< Updated upstream
       <audio ref={audioRef} src={weddingMusic} preload="auto" loop />
       <ActionButtons cardRef={cardRef} />
 
+=======
+      <audio
+        ref={audioRef}
+        src={weddingMusic}
+        preload="auto"
+        loop
+        muted={isMuted}
+        onPlay={() => setIsMusicPlaying(true)}
+        onPause={() => setIsMusicPlaying(false)}
+      />
+      {isMusicPlaying && (
+        <button
+          className={`${styles.musicToggle} ${isMuted ? styles.musicToggleMuted : ""}`}
+          type="button"
+          onClick={handleToggleMusic}
+          aria-label={isMuted ? "Unmute music" : "Mute music"}
+          aria-pressed={isMuted}
+        >
+          {isMuted ? (
+            <VolumeX aria-hidden="true" size={18} />
+          ) : (
+            <Music2 aria-hidden="true" size={18} />
+          )}
+        </button>
+      )}
+      <ActionButtons />
+>>>>>>> Stashed changes
     </main>
   );
 }

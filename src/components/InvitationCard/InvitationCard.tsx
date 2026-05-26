@@ -7,7 +7,6 @@ import { animationTiming, wedding } from "../../data/wedding";
 import styles from "./InvitationCard.module.scss";
 
 type InvitationCardProps = {
-  guest: Guest;
   isOpen: boolean;
   reducedMotion: boolean;
 };
@@ -51,9 +50,9 @@ const InvitationCard = forwardRef<HTMLElement, InvitationCardProps>(
           ease: softEase,
         }}
       >
-
         {/* <div></div> */}
 
+<<<<<<< Updated upstream
         <div
           className={styles.texture}
           aria-hidden="true" />
@@ -63,34 +62,69 @@ const InvitationCard = forwardRef<HTMLElement, InvitationCardProps>(
         >
           <img src={flImage} alt="" draggable="false" />
         </div>
+=======
+        <div className={styles.texture} aria-hidden="true" />
+>>>>>>> Stashed changes
 
-        <motion.div custom={0} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.heartLine}>
+        <motion.div
+          custom={0}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.heartLine}
+        >
           <img src={heartImage} alt="" draggable="false" />
         </motion.div>
 
-        <motion.p custom={1} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.month}>
+        <motion.p
+          custom={1}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.month}
+        >
           JUNE
         </motion.p>
 
-        <motion.div custom={2} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.calendar} aria-label="June 11th 2026">
+        <motion.div
+          custom={2}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.calendar}
+          aria-label="June 11th 2026"
+        >
           {days.map((day) => (
             <span key={day} className={styles.day}>
               {day}
             </span>
           ))}
           {dates.map((date) => (
-            <span key={date} className={date === "11" ? styles.markedDate : styles.date}>
+            <span
+              key={date}
+              className={date === "11" ? styles.markedDate : styles.date}
+            >
               {date}
             </span>
           ))}
         </motion.div>
 
-        <motion.div custom={3} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.saveDate}>
+        <motion.div
+          custom={3}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.saveDate}
+        >
           <span aria-hidden="true" />
           save the date
         </motion.div>
 
-        <motion.p custom={4} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"}
+        <motion.p
+          custom={4}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
           className={styles.forWedding}
         >
           FOR THE WEDDING OF
@@ -98,29 +132,47 @@ const InvitationCard = forwardRef<HTMLElement, InvitationCardProps>(
         <motion.div
           custom={5}
           variants={contentVariants}
-          initial="hidden" animate={opened ? "visible" : "hidden"}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
           className={styles.names}
-        > {wedding.coupleNames}
+        >
+          {" "}
+          {wedding.coupleNames}
         </motion.div>
 
-        <motion.div custom={6} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.englishDetails}>
+        <motion.div
+          custom={6}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.englishDetails}
+        >
           <p>{wedding.englishDateText}</p>
           <p>{wedding.englishTimeText}</p>
         </motion.div>
-        <motion.div custom={6} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.englishDetails}>
+        <motion.div
+          custom={6}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.englishDetails}
+        >
           <p>{wedding.englishAddressText}</p>
           <p>(Lovers’ Garden)</p>
         </motion.div>
 
-        <motion.div custom={7} variants={contentVariants} initial="hidden" animate={opened ? "visible" : "hidden"} className={styles.persianDetails}>
+        <motion.div
+          custom={7}
+          variants={contentVariants}
+          initial="hidden"
+          animate={opened ? "visible" : "hidden"}
+          className={styles.persianDetails}
+        >
           <p>{wedding.persianDateText}</p>
           <p>{wedding.address}</p>
           <p>{wedding.venueName}</p>
         </motion.div>
-
       </motion.article>
-
-
     );
   },
 );

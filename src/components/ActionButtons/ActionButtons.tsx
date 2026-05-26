@@ -1,6 +1,10 @@
 import { Download, MapPin } from "lucide-react";
 import { RefObject, useState } from "react";
 import { Button } from "@/components/ui/button";
+<<<<<<< Updated upstream
+=======
+import invitationDownload from "../../assets/images/export.jpg";
+>>>>>>> Stashed changes
 import { wedding } from "../../data/wedding";
 import { exportElementAsPng } from "../../utils/exportImage";
 import { openExternalUrl } from "../../utils/maps";
